@@ -5,6 +5,12 @@
 ##### Useful JavaScript Code Snippets5
 ###### Useful JavaScript Code Snippets6
 
+`**` - Item 1\n- Item 2\n- Item 3\n- Item 4 `**`
+- Item 1
+- Item 2
+- Item 3
+- Item 4
+
 1. **Sort an Array**
 
 <Code language="javascript">
