@@ -1,6 +1,11 @@
 # Useful JavaScript Code Snippets
+## Useful JavaScript Code Snippets2
+### Useful JavaScript Code Snippets3
+#### Useful JavaScript Code Snippets4
+##### Useful JavaScript Code Snippets5
+###### Useful JavaScript Code Snippets6
 
-1. Sort an Array
+1. **Sort an Array**
 
 <Code language="javascript">
 //strings
@@ -16,7 +21,7 @@ return a - b;
 //[ 8, 87, 101 ]
 </Code>
 
-2. Select a random element
+2. *Select a random element*
 
 <Code language="javascript">
 const items = ["Ball", "Bat", "Cup"]
