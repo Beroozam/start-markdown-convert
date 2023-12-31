@@ -1,6 +1,6 @@
 import './App.css'
 import Markdown from 'markdown-to-jsx'
-import {useEffect, useState} from "react";
+// import {useEffect, useState} from "react";
 import Code from "./code";
 
 const markdownFile = `
