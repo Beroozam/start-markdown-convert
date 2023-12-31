@@ -6,5 +6,8 @@ export default defineConfig({
   plugins: [react()],
   assetsInclude:[
       "**/*.md"
-  ]
+  ],
+  build: {
+    outDir: 'build', // Adjust this path to match your desired build directory
+  },
 })
