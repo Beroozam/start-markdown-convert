@@ -28,7 +28,7 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: |
-          if [ -e pnpm-lock.lock ]; then
+          if [ -e pnpm-lock.yaml ]; then
           pnpm install --frozen-lockfile
           elif [ -e package-lock.json ]; then
           npm ci --legacy-peer-deps
