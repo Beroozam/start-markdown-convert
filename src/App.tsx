@@ -11,14 +11,50 @@ const markdownFile = `
 ##### Useful JavaScript Code Snippets5
 ###### Useful JavaScript Code Snippets6
 
-\`**\` - Item 1\\n- Item 2\\n- Item 3\\n- Item 4 \`**\`
+---
+
+# tables
+| Col 1 | Col 2   |
+| ----- | -----   |
+| This  | is      |
+| an    | example |
+
+---
+
+[x] checked input['checkbox']  
+[ ] unchecked input['checkbox']
+
+---
+
+- Item 1\n- Item 2\n- Item 3\n- Item 4 
 - Item 1
 - Item 2
 - Item 3
 - Item 4
 
+---
 
-**React Component for Rendering Markdown**: **\`markdown-to-jsx\`** is a React component that converts Markdown content into React elements. It doesn't support embedding React components within the Markdown content itself.
+==highlighted==
+
+---
+
+> quote
+
+---
+
+# images
+![Alt](https://media.geeksforgeeks.org/wp-content/uploads/20230911173805/What-is-Artiificial-Intelligence(AI).webp)
+
+---
+
+# links
+[Label](https://url.com)  
+[Relative](/other-page)  
+[Id](#my-id)  
+<https://url.com>  
+https://extended.com  
+
+**React Component for Rendering Markdown**:  \n __markdown-to-jsx__   is a React component that converts Markdown content into React elements. It doesn't support embedding React components within the Markdown content itself.
 
 
 1- **Sort an Array**
@@ -54,7 +90,13 @@ function reverseString(string) {
 
 revereseString("Random String")
 </Code>
+
+# Interactive Component
+<ComponentCustom>Please Click me!</ComponentCustom>
 `
+const ComponentCustom = ({children,...props}) => {
+  return <div style={{width:"300px",height:"100px",backgroundColor:"#ccc",color:"white"}} {...props}>This is a ComponentCustom {children}</div>
+}
 
 const preprocessMarkdown = (content) => {
   // Replace "1-" with "1." for ordered lists
@@ -95,8 +137,13 @@ function App() {
   //             .catch(error=>console.log(error))
   //       })
   // },[])
+
+  const onClickHandler = () => {
+    alert("Interactive component")
+  }
+
   return (
-    <div style={{display:"flex",justifyContent:"space-between",gap:"2em"}}>
+    <div style={{display:"flex",justifyContent:"space-between",gap:"2em",paddingBottom:"100px"}}>
       <div style={{maxWidth:"45%",overflow:"hidden"}}>
         <h1 style={{textDecoration:"underline"}}>The content of markdown(.md) file</h1>
         <pre>
@@ -112,6 +159,11 @@ function App() {
                 Code:{
                   component: Code
                 },
+                img:{
+                  component:({...props}) => {
+                    return <img {...props} style={{maxWidth:"200px"}} />
+                  }
+                },
                 ol:{
                   component: OlTag
                 },
@@ -120,6 +172,10 @@ function App() {
                 },
                 li:{
                   component: LiTag
+                },
+                ComponentCustom:{
+                  component: ComponentCustom,
+                  props: {onClick:onClickHandler}
                 }
               },
             }}
