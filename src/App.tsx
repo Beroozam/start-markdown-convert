@@ -58,8 +58,8 @@ revereseString("Random String")
 
 const preprocessMarkdown = (content) => {
   // Replace "1-" with "1." for ordered lists
-  const processedContent_1 = content.replace(/(\d+)-/g, '$1.');
-  const processedContent = processedContent_1.replace(/:/g, ':\n\n');
+  const processedContent = content.replace(/(\d+)-/g, '$1.');
+  // const processedContent = processedContent_1.replace(/:/g, ':\n\n');
   return processedContent;
 };
 
